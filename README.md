@@ -34,3 +34,6 @@ This project is mainly to aid me in my own studies. This program will take a bat
     - Ideally the user just enters or imports a folder where they've put all the images.
     - [ ] Add a warning note to tell the user to make sure only the images for the book are in the folder.
 - [ ] Build the program to...
+
+## Acknowledgements:
+- 
