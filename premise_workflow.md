@@ -1,5 +1,44 @@
 
-The goal of this project is to create an interactive program which can perform the following steps:
+The goal of this project is to create an interactive program which can run from start to finish, where "start" is considered "Ground Zero". "Ground Zero" is defined as having a folder composed of just pictures of the pages of a book. "Finish" is considered as the book fully processed into a readable PDF with bookmarks and also segmented into subcomponents with associated summaries.
+
+The main stages of the program (currently) are as follows:
+
+0. LLM Processor - **Main backbone of the program**
+	- Loads in a prompt and documents to act on.
+	- Loads in LLM to process documents given and responds according to the prompt.
+	- Outputs a file containing the prompt response.
+
+1. Document Compiler
+	-  Receive a folder containing a series of images of a book.
+	-  Crop pages to contain only the contents of the pages themselves.
+	- Perform OCR on each image and compile the images into a PDF.
+
+2. Document Processor
+	- Receive a PDF.
+	- Section off first 20-30 pages of PDF and possibly last 10-20 pages of PDF.
+	- Use the LLM Processor to extract metadata from the document.
+	- Adds metadata to the document information.
+	- Adds bookmarks to the PDF according to the table of contents.
+
+3. Document Slicer
+	- Uses table of contents...
+
+4. Summarizer
+	- ...
+
+---
+
+| Stage | Input(s) | Outputs |
+| --- | --- | --- |
+| LLM Processor | list of filepaths (first is prompt, remaining are documents) | File containing response and filepath for said file |
+| Document Compiler | Filepath for the folder containing book images | PDF document and filepath for said document |
+| Document Processor | Filepath for the file to be processed | Metadata organized into a JSON file, complete with table of contents including page numbers |
+| Document Slicer | Filepath
+| Summarizer |
+
+
+
+--- OLD ---
 1. Receive a folder with images. These images are pictures of the open pages of a book against an unknown background. It is assumed the pages contrast sufficiently with the background. It is also assumed that the pages have some identifier in their name that indicates their order, and that no page is identified out of order.
 2. Crop the images to contain only the face of the pages and excludes any backgrounds.
 3. Splits the images so that there is only one page per image.
