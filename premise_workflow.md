@@ -8,9 +8,9 @@ The main stages of the program (currently) are as follows:
 	- Loads in LLM to process documents given and responds according to the prompt.
 	- Outputs a file containing the prompt response.
 
-1. Document Compiler
-	-  Receive a folder containing a series of images of a book.
-	-  Crop pages to contain only the contents of the pages themselves.
+1. Document Compiler - **Uses OCRmyPDF**
+	- Receive a folder containing a series of images of a book.
+	- Crop pages to contain only the contents of the pages themselves.
 	- Perform OCR on each image and compile the images into a PDF.
 
 2. Document Processor
